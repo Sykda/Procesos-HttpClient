@@ -11,8 +11,11 @@ public class HttpclientApplication {
 		try {
 			crud.get();
 			crud.post();
+			crud.get();
 			crud.put();
+			crud.get();
 			crud.delete();
+			crud.get();
 		} catch (Exception e) {
 			System.out.println("Algo ha salido mal: " + e.getMessage());
 		}

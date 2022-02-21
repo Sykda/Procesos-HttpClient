@@ -17,8 +17,7 @@ public class Crud {
 
 		HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:8090/api/v1/student/"))
 				.setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
-				.header("Content-Type", "application/json")
-				.build();
+				.header("Content-Type", "application/json").build();
 
 		HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -31,14 +30,13 @@ public class Crud {
 
 	public void post() throws IOException, InterruptedException {
 
-		String json = "{\"name\":\"Laura\",\"email\":\"laurita@gmail.com\",\"age\":33,\"date\":\"2019-10-17\"}";
+		String json = "{\"name\":\"Paula\",\"email\":\"paulita@gmail.com\",\"age\":30,\"date\":\"2019-10-17\"}";
 
 		// add json header
 		HttpRequest request = HttpRequest.newBuilder().POST(HttpRequest.BodyPublishers.ofString(json))
 				.uri(URI.create("http://localhost:8090/api/v1/student/"))
 				.setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
-				.header("Content-Type", "application/json")
-				.build();
+				.header("Content-Type", "application/json").build();
 
 		HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -53,10 +51,9 @@ public class Crud {
 
 		// add json header
 		HttpRequest request = HttpRequest.newBuilder().PUT(HttpRequest.BodyPublishers.noBody())
-				.uri(URI.create("http://localhost:8090/api/v1/student/3?name=pedro&email=anita@gmail.com"))
+				.uri(URI.create("http://localhost:8090/api/v1/student/3?name=pedro&email=pedro@gmail.com"))
 				.setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
-				.header("Content-Type", "application/json")
-				.build();
+				.header("Content-Type", "application/json").build();
 
 		HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
@@ -73,8 +70,7 @@ public class Crud {
 		HttpRequest request = HttpRequest.newBuilder().DELETE()
 				.uri(URI.create("http://localhost:8090/api/v1/student/3?"))
 				.setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
-				.header("Content-Type", "application/json")
-				.build();
+				.header("Content-Type", "application/json").build();
 
 		HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
