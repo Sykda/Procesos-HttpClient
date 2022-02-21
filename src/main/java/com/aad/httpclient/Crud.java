@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class Crud {
 
-	private static final HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2)
+	protected static final HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2)
 			.connectTimeout(Duration.ofSeconds(10)).build();
 
 	public void get() throws IOException, InterruptedException, URISyntaxException {

@@ -6,16 +6,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HttpclientApplication {
 
 	public static void main(String[] args) {
-		Crud crud = new Crud();
+		
+		PeticionesAPI api = new PeticionesAPI();
 
 		try {
-			crud.get();
-			crud.post();
-			crud.get();
-			crud.put();
-			crud.get();
-			crud.delete();
-			crud.get();
+			
+			//Peticiones a nuestra api
+			 api.get(); 
+			 api.post(); 
+			 api.get(); 
+			 api.put(); 
+			 api.get(); 
+			 api.delete();
+			 api.get();
+			 
+			
+			//Peticiones a la api pública
+			api.get("https://www.tomorrow.io/weather-api/");
+			api.delete("https://www.tomorrow.io/weather-api/");
+			
 		} catch (Exception e) {
 			System.out.println("Algo ha salido mal: " + e.getMessage());
 		}
